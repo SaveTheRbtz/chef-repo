@@ -1,0 +1,19 @@
+client
+dev tun
+proto <%= node["openvpn"]["proto"] %>
+remote <%= node["openvpn"]["gateway"] %> <%= node["openvpn"]["port"] %>
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ca ca.crt
+cert <%= @username %>.crt
+key <%= @username %>.key
+comp-lzo
+verb 3
+<% if node["openvpn"]["push"] -%>
+<% node["openvpn"]["push"].each do |push| -%>
+pull "<%= push %>"
+<% end -%>
+<% end -%>
+
