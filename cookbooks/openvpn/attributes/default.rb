@@ -19,7 +19,7 @@
 
 default["openvpn"]["local"]   = "0.0.0.0"
 default["openvpn"]["proto"]   = "tcp"
-default["openvpn"]["port"]    = "80"
+default["openvpn"]["port"]    = "443"
 default["openvpn"]["type"]    = "server"
 default["openvpn"]["subnet"]  = "10.73.37.0"
 default["openvpn"]["netmask"] = "255.255.255.0"
